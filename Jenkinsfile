@@ -24,8 +24,9 @@ pipeline {
                 {
                     "pattern": "build/distributions/menkins.zip",
                     "target": "example-repo-local/helloLaroy/${env.BUILD_NUMBER}/"
-]
                 }
+]
+
         }""")
             }
         }
