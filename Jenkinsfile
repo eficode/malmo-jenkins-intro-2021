@@ -15,8 +15,15 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                rtUpload (
+			serverId: 'artifactory',
+			spec: """ {
+				"files": [
+				{
+					"pattern": "build/distributions/menkins.zip",
+					"target": "example-repo-local/helloLaroy/${env.BUILD_NUMBER}/"
+]
             }
-        }
+        }""")
     }
 }
